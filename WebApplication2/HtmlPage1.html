@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title>MyWebSiteYEESS</title>
+    <style>
+        .odd { background-color: #fafafa;}
+        .even { background-color: silver;}
+        .anblck { 
+            border: 1px solid black;
+            padding: 20px 10px;
+            max-width: 25%;
+            transition: 0.35s;
+            margin: 10px 20px;
+        }
+        .anblck:hover {
+            transition: 0.5s;
+            background-color: silver;
+        }
+        .anheaderline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+   
+<div ng-controller="phoneController">
+    <div ng-repeat="company in phones" class="anblck">
+        <p class="anheaderline">Company: {{company.name}}</p>
+        <div ng-repeat="model in company.models">
+            <b>{{model.name}}</b>
+            <p>Price: {{model.price}}</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="Scripts/angular.min.js"></script>
+<script type="text/javascript">
+    angular.module('myApp', [])
+</script>
+<script>
+    var myApp = angular.module('myApp');
+    myApp.controller('phoneController',
+        function($scope) {
+            $scope.phones = [
+                {
+                    name: 'Nokia',
+                    models: [
+                        {
+                            name: "Nokia Lumia 530",
+                            price: 155
+                        }, {
+                            name: "Nokia x2",
+                            price: 222
+                        }
+                    ]
+                }, {
+                    name: 'Samsung',
+                    models: [
+                        {
+                            name: 'Samsung Galaxy S5',
+                            price: '500'
+                        }, {
+                            name: 'Samsung Galaxy Alpha',
+                            price: 400
+
+        }]
+                }]
+        });
+
+            
+</script>
+</body>
+</html>
