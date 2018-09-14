@@ -33,15 +33,22 @@
         </div>
     </div>
 </div>
-
+<div ng-controller="phoneController">
+    <p>Kol-vo: <span ng-bind="phones.length"></span></p>
+    <p>First: <span ng-bind="phones[0].name"></span></p>
+</div>
 
 
 
 
 <script src="Scripts/angular.min.js"></script>
+
+
 <script type="text/javascript">
     angular.module('myApp', [])
 </script>
+
+
 <script>
     var myApp = angular.module('myApp');
     myApp.controller('phoneController',
