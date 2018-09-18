@@ -18,7 +18,10 @@
             background-color: silver;
         }
         .anheaderline {
-            text-decoration: underline;
+            text-decoration: line-through;
+        }
+        .new {
+            color: yellow;
         }
     </style>
 </head>
@@ -29,12 +32,12 @@
         <p class="anheaderline">Company: {{company.name}}</p>
         <div ng-repeat="model in company.models">
             <b>{{model.name}}</b>
-            <p>Price: {{model.price}}</p>
+            <p ng-class="somestyle">Price: {{model.price}}</p>
         </div>
     </div>
 </div>
 <div ng-controller="phoneController">
-    <p>Kol-vo: <span ng-bind="phones.length"></span></p>
+    <p class="new">Kol-vo: <span ng-bind="phones.length"></span></p>
     <p>First: <span ng-bind="phones[0].name"></span></p>
 </div>
 
@@ -77,6 +80,7 @@
 
         }]
                 }]
+            $scope.somestyle = {background: '#333' };
         });
 
             
